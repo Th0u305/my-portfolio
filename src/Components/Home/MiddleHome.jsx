@@ -17,7 +17,7 @@ const MiddleHome = () => {
           customized to meet the distinct needs of the audience.
         </h1>
       </div>
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full"></hr>
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full"></hr>
       <div className="grid grid-cols-2">
         <div className="space-y-16">
           <FlipWordsDemo></FlipWordsDemo>
