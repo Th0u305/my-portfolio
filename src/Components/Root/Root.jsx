@@ -19,7 +19,7 @@ const Root = () => {
       }
     }
     if (window.innerWidth > 768) {
-      if (scrollYProgress.get() > 0.2) {
+      if (scrollYProgress.get() > 0.1) {
         setBgColor("gray");
       }
       if (scrollYProgress.get() > 0.3) {

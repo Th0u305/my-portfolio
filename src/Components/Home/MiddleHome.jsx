@@ -12,14 +12,14 @@ const MiddleHome = () => {
   return (
     <div className="h-[100vh] flex flex-col justify-evenly items-center">
       <div className="w-full" data-aos="fade-down">
-        <h1 className="text-5xl">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl">
           I take a user-first approach to design, making sure every solution is
           customized to meet the distinct needs of the audience.
         </h1>
       </div>
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full"></hr>
-      <div className="grid grid-cols-2">
-        <div className="space-y-16">
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-8 md:space-y-16">
           <FlipWordsDemo></FlipWordsDemo>
           <button
             className="relative h-[3rem] w-[10rem] inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
@@ -33,12 +33,12 @@ const MiddleHome = () => {
           </button>
         </div>
         <div className="">
-          <h1 className="text-2xl"  data-aos="fade-up">
+          <h1 className="text-lg md:text-2xl"  data-aos="fade-up">
             As a junior web developer, I focus on delivering high-quality code
             and polished user experiences.I enjoy turning complex ideas into
             simple, elegant solutions that work seamlessly across devices.
           </h1>
-          <h1 className="text-2xl mt-3"  data-aos="fade-up"
+          <h1 className="text-lg md:text-2xl mt-3"  data-aos="fade-up"
             data-aos-delay="300">
             My experience with React, Tailwind CSS , MongoDB and Express.js
             challenges in both front-end and back-end development. My goal is to

@@ -2,9 +2,16 @@ import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
+
+  AOS.init({
+    duration: 900, // values from 0 to 3000, with step 50ms
+    easing: "ease-in-out", // default easing for AOS animations
+  });
 
   return (
     <div
@@ -20,6 +27,7 @@ export const HoverEffect = ({ items, className }) => {
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
+          data-aos={item.data}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
@@ -39,12 +47,26 @@ export const HoverEffect = ({ items, className }) => {
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle><img src={item.image} className="rounded-2xl" alt="" /></CardTitle>
+            <CardTitle>
+              <img src={item.image} className="rounded-2xl" alt="" />
+            </CardTitle>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
         </NavLink>
       ))}
+      <div className="col-span-full flex items-center mt-12">
+      <button
+        className="relative mx-auto h-[3rem] w-[10rem] inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+        // data-aos="fade-up"
+        // data-aos-delay="200"
+      >
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#34e5eb_0%,#ffff_50%,#81d3e3_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+          View All Projects
+        </span>
+      </button>
+      </div>
     </div>
   );
 };
