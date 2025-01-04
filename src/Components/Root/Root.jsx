@@ -19,7 +19,7 @@ const Root = () => {
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (scrollYProgress) {
-      if (scrollYProgress.get() > 0.4) {
+      if (scrollYProgress.get() > 0.5) {
         setBgColor("gray");
       }
       if (scrollYProgress.get() > 0.7) {

@@ -33,12 +33,12 @@ const MiddleHome = () => {
           </button>
         </div>
         <div className="">
-          <h1 className="text-2xl"  data-aos="fade-up"  data-aos-delay="50">
+          <h1 className="text-2xl"  data-aos="fade-up">
             As a junior web developer, I focus on delivering high-quality code
             and polished user experiences.I enjoy turning complex ideas into
             simple, elegant solutions that work seamlessly across devices.
           </h1>
-          <h1 className="text-2xl"  data-aos="fade-up"
+          <h1 className="text-2xl mt-3"  data-aos="fade-up"
             data-aos-delay="300">
             My experience with React, Tailwind CSS , MongoDB and Express.js
             challenges in both front-end and back-end development. My goal is to

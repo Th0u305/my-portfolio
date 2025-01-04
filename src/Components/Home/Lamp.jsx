@@ -15,7 +15,7 @@ export function LampDemo() {
         }}
         className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
-        Let's Create Something <br /> Amazing Together
+        Building User-Centered <br /> Websites That Shine
       </motion.h1>
     </LampContainer>
   );

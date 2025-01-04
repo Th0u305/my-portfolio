@@ -8,7 +8,7 @@ const Home = () => {
       <div className="">
         <LampDemo></LampDemo>
       </div>
-      <button className="container_mouse absolute top-[35%] left-0 right-0 mx-auto w-fit">
+      <button className="container_mouse absolute top-[38%] left-0 right-0 mx-auto w-fit">
         <span className="mouse-btn">
           <span className="mouse-scroll"></span>
         </span>
