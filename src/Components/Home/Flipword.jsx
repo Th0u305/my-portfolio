@@ -16,6 +16,6 @@ export function FlipWordsDemo() {
         className="text-4xl inline-flex" data-aos="fade-down" data-aos-delay="200">
         <FlipWords words={words}/>, I'm Ahnaf
       </div>
-    </div>)
+    </div>) 
   );
 }
