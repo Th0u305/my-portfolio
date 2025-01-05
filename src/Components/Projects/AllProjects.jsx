@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Image, Spinner } from "@nextui-org/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
@@ -6,6 +6,8 @@ import { NavLink } from "react-router";
 export default function AllProjects() {
   const [service, setService] = useState([]);
   const [allService, setAllService] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [msg, setMsg] = useState("");
 
   const buttonData = [{ name: "css" }, { name: "react" }, { name: "random" }];
 
@@ -24,6 +26,10 @@ export default function AllProjects() {
   const handleData = (data) => {
     const filterData = allService.filter((item) => item.type === data);
     setService(filterData);
+    if (data === "random") {
+      setLoading(false)
+      setMsg("No Data available")
+    }
   };
 
   return (
@@ -42,10 +48,9 @@ export default function AllProjects() {
           </button>
         ))}
       </div>
-      <div className="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto mb-28">
         {service.length > 0 ? (
           service.map((item, index) => (
-            /* eslint-disable no-console */
             <Card key={index} isPressable shadow="sm">
               <CardBody className="overflow-visible p-0">
                 <Image
@@ -83,10 +88,11 @@ export default function AllProjects() {
             </Card>
           ))
         ) : (
-          <div className="col-span-full">
-            <h1 className="text-4xl text-white text-center mt-28">
-              No data available
-            </h1>
+          <div className="col-span-full mx-auto mt-28">
+            {loading && (
+              <div class="w-16 h-16 border-5 border-t-indigo-500 border-gray-300 rounded-full animate-spin"></div>
+            )}
+            <h1 className="text-3xl text-white">{msg}</h1>
           </div>
         )}
       </div>

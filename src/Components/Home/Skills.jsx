@@ -51,7 +51,7 @@ export default function Skills() {
 
   return (
     <div
-      className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-5 w-fit mx-auto"
+      className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-5 w-fit mx-auto mb-28"
       data-aos="fade-up"
     >
       {list.map((item, index) => (

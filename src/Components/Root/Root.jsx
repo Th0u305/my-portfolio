@@ -14,25 +14,25 @@ const Root = () => {
   }
 
 
-  // useMotionValueEvent(scrollYProgress, "change", (current) => {
-  //   // Check if current is not undefined and is a number
-  //   if (window.innerWidth <= 768) {
-  //     if (scrollYProgress.get() > 0.0) {
-  //       setBgColor("gray");
-  //     }
-  //     if (scrollYProgress.get() > 0.1) {
-  //       setBgColor("white");
-  //     }
-  //   }
-  //   if (window.innerWidth > 768) {
-  //     if (scrollYProgress.get() > 0.1) {
-  //       setBgColor("gray");
-  //     }
-  //     if (scrollYProgress.get() > 0.3) {
-  //       setBgColor("white");
-  //     }
-  //   }
-  // });
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (window.innerWidth <= 768) {
+      if (scrollYProgress.get() > 0.0) {
+        setBgColor("gray");
+      }
+      if (scrollYProgress.get() > 0.1) {
+        setBgColor("white");
+      }
+    }
+    if (window.innerWidth > 768) {
+      if (scrollYProgress.get() > 0.1) {
+        setBgColor("gray");
+      }
+      if (scrollYProgress.get() > 0.3) {
+        setBgColor("white");
+      }
+    }
+  });
 
   return (
     <div

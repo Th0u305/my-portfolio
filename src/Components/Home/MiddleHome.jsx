@@ -10,7 +10,7 @@ const MiddleHome = () => {
   });
 
   return (
-    <div className="h-[100vh] flex flex-col justify-evenly items-center" id="about">
+    <div className="flex flex-col justify-evenly items-center" id="about">
       <div className="w-full" data-aos="fade-down">
         <h1 className="text-3xl md:text-4xl lg:text-5xl">
           I take a user-first approach to design, making sure every solution is
