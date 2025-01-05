@@ -10,7 +10,7 @@ const MiddleHome = () => {
   });
 
   return (
-    <div className="h-[100vh] flex flex-col justify-evenly items-center">
+    <div className="h-[100vh] flex flex-col justify-evenly items-center" id="about">
       <div className="w-full" data-aos="fade-down">
         <h1 className="text-3xl md:text-4xl lg:text-5xl">
           I take a user-first approach to design, making sure every solution is
@@ -28,7 +28,7 @@ const MiddleHome = () => {
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#34e5eb_0%,#ffff_50%,#81d3e3_100%)]" />
             <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-              Border Magic
+              Download CV
             </span>
           </button>
         </div>
