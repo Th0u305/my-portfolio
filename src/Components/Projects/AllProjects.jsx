@@ -11,7 +11,7 @@ export default function AllProjects() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/allProjects")
+      .get("https://portfolio-server-psi-three.vercel.app/")
       .then((response) => {
         setService(response.data.sort(() => Math.random() - 0.5).slice(0, 6));
         setAllService(response.data);

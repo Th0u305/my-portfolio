@@ -6,7 +6,7 @@ import { NavLink } from "react-router";
 
 export function NavbarDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center">
+    <div className="relative flex items-center justify-center">
       <Navbar className="top-2" />
     </div>
   );
