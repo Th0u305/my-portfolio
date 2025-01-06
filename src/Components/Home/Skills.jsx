@@ -10,48 +10,48 @@ export default function Skills() {
     {
       title: "Html",
       img: "https://i.ibb.co.com/FVD3fKW/html.png",
-      price: "$5.50",
+      data: "fade-up",
     },
     {
       title: "CSS",
       img: "https://i.ibb.co.com/T2SLpx1/css.png",
-      price: "$3.00",
+      data: "fade-right",
     },
     {
       title: "Tail",
       img: "https://i.ibb.co.com/WBdgFzd/tailwind-css.png",
-      price: "$10.00",
+      data: "fade-up",
     },
     {
       title: "Lemon",
       img: "https://i.ibb.co.com/M7gW7cH/javascript.png",
-      price: "$5.30",
+      data: "fade-right",
     },
     {
       title: "Avocado",
       img: "https://i.ibb.co.com/Z2zkGdV/react.png",
-      price: "$15.70",
+      data: "fade-up",
     },
     {
       title: "Lemon 2",
       img: "https://i.ibb.co.com/mzDxN0k/node-js.png",
-      price: "$8.00",
+      data: "fade-right",
     },
     {
       title: "Banana",
       img: "https://i.ibb.co.com/c1NZGWJ/mongodb.png",
-      price: "$7.50",
+      data: "fade-up",
     },
     {
       title: "Watermelon",
       img: "https://i.ibb.co.com/7bcL2f3/git.png",
-      price: "$12.20",
+      data: "fade-right",
     },
   ];
 
   return (
     <div
-      className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-5 w-fit mx-auto mb-28"
+      className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-5 w-fit mx-auto mb-28 md:mb-36"
       data-aos="fade-up"
     >
       {list.map((item, index) => (
@@ -61,6 +61,7 @@ export default function Skills() {
           isPressable
           shadow="sm"
           onPress={() => console.log("item pressed")}
+          data-aos={item.data}
         >
           <CardBody className="overflow-visible">
             <Image alt={item.title} className="w-20" src={item.img} />

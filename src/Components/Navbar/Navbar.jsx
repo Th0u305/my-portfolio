@@ -6,8 +6,6 @@ import { Link, NavLink } from "react-router";
 import { ContextData2 } from "../Root/Root";
 
 export function NavbarDemo() {
-  // const { myRef } = useContext(ContextData2);
-
   return (
     <div className="relative flex items-center justify-center">
       <Navbar className="top-2" />
@@ -15,6 +13,12 @@ export function NavbarDemo() {
   );
 }
 function Navbar() {
+  const { myRef } = useContext(ContextData2);
+
+  const handleClick = () => {
+    myRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
       className={cn(
@@ -23,25 +27,13 @@ function Navbar() {
     >
       <Menu>
         <NavLink
-          onClick={() => {
-            const element = document.getElementById("home");
-            element?.scrollIntoView({
-              behavior: "smooth",
-            });
-          }}
           to="/"
           className="text-md font-medium text-white hover:text-gray-400 focus:text-cyan-300"
         >
           Home
         </NavLink>
         <NavLink
-          to="/"
-          onClick={() => {
-            const element = document.getElementById("about");
-            element?.scrollIntoView({
-              behavior: "smooth",
-            });
-          }}
+          onClick={handleClick}
           className="text-md font-medium text-white hover:text-gray-400 focus:text-cyan-300"
         >
           About

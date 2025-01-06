@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { FlipWordsDemo } from "./Flipword";
+import { FaDownload } from "react-icons/fa";
+import { ContextData2 } from "../Root/Root";
+
 
 const MiddleHome = () => {
   AOS.init({
@@ -9,15 +12,17 @@ const MiddleHome = () => {
     easing: "ease-in-out", // default easing for AOS animations
   });
 
+  const {myRef} = useContext(ContextData2)
+
   return (
-    <div className="flex flex-col justify-evenly items-center" id="about">
-      <div className="w-full" data-aos="fade-down">
+    <div className="flex flex-col justify-evenly items-center" id="about" ref={myRef}>
+      <div className="w-full mb-28 md:mb-36" data-aos="fade-down">
         <h1 className="text-3xl md:text-4xl lg:text-5xl">
           I take a user-first approach to design, making sure every solution is
           customized to meet the distinct needs of the audience.
         </h1>
       </div>
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full"></hr>
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full mb-28 md:mb-36"></hr>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-8 md:space-y-16">
           <FlipWordsDemo></FlipWordsDemo>
@@ -27,12 +32,12 @@ const MiddleHome = () => {
             data-aos-delay="200"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#34e5eb_0%,#ffff_50%,#81d3e3_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-              Download CV
+            <span className="inline-flex gap-3 h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+              Download CV <FaDownload className="text-lg" />
             </span>
           </button>
         </div>
-        <div className="">
+        <div className="mt-28 md:mt-0">
           <h1 className="text-lg md:text-2xl"  data-aos="fade-up">
             As a junior web developer, I focus on delivering high-quality code
             and polished user experiences.I enjoy turning complex ideas into

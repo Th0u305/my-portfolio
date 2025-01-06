@@ -24,23 +24,23 @@ const Contact = () => {
   };
   return (
     <BackgroundBeamsWithCollision>
-      <section className="bg-[#37474F] dark:bg-gray-900 mt-48 mb-16 z-50 rounded-2xl w-11/12 p-5 md:w-1/2 xl:p-16">
+      <section className="bg-[#bdbdbd] mt-48 mb-16 z-30 rounded-2xl w-11/12 p-5 md:w-1/2 xl:p-16">
         <div className="py-8 lg:py-16 px-4 mx-auto">
-          <h2 className="text-white mb-4 text-3xl lg:text-5xl tracking-tight font-semibold text-center dark:text-white">
+          <h2 className="text-gray-800 mb-4 text-3xl lg:text-5xl tracking-tight font-semibold text-center">
             Get in Touch
           </h2>
           <form action="#" className="space-y-8" onSubmit={sendFeedBack}>
             <div>
               <label
                 for="email"
-                className="block mb-2 text-lg font-medium dark:text-gray-300 text-white"
+                className="block mb-2 text-lg font-medium text-gray-800"
               >
                 Your email
               </label>
               <input
                 type="email"
                 name="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="shadow-sm border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light"
                 placeholder="example@gmail.com"
                 required
               ></input>
@@ -48,7 +48,7 @@ const Contact = () => {
             <div>
               <label
                 for="subject"
-                className="block mb-2 text-lg font-medium text-white dark:text-gray-300"
+                className="block mb-2 text-lg font-medium text-gray-800"
               >
                 Subject
               </label>
@@ -56,7 +56,7 @@ const Contact = () => {
                 type="text"
                 id="subject"
                 name="subject"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="block p-3 w-full text-sm  rounded-lg border shadow-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light"
                 placeholder="Let us know how we can help you"
                 required
               ></input>
@@ -64,7 +64,7 @@ const Contact = () => {
             <div className="sm:col-span-2">
               <label
                 for="message"
-                className="block mb-2 text-lg font-medium text-white dark:text-gray-400"
+                className="block mb-2 text-lg font-medium text-gray-800"
               >
                 Your message
               </label>
@@ -72,7 +72,7 @@ const Contact = () => {
                 id="message"
                 rows="6"
                 name="message"
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block p-2.5 w-full text-sm text-gray-800 bg-gray-50 rounded-lg shadow-sm border border-gray-600 placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Leave a comment..."
               ></textarea>
             </div>

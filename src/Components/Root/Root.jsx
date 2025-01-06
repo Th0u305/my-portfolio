@@ -6,7 +6,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 export const ContextData2 = createContext();
 
 const Root = () => {
-  const [bgColor, setBgColor] = useState("white");
+  const [bgColor, setBgColor] = useState("#e6e4e4");
   const { scrollYProgress } = useScroll();
   const myRef = useRef(null)
   const data = {
@@ -21,15 +21,15 @@ const Root = () => {
         setBgColor("gray");
       }
       if (scrollYProgress.get() > 0.1) {
-        setBgColor("white");
+        setBgColor("#e6e4e4");
       }
     }
     if (window.innerWidth > 768) {
       if (scrollYProgress.get() > 0.1) {
         setBgColor("gray");
       }
-      if (scrollYProgress.get() > 0.3) {
-        setBgColor("white");
+      if (scrollYProgress.get() > 0.2) {
+        setBgColor("#e6e4e4");
       }
     }
   });
