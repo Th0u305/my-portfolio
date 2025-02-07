@@ -1,7 +1,7 @@
 import { LampDemo } from "./Lamp";
 import "../Home/ScrollDown.css";
 import MiddleHome from "./MiddleHome";
-import { CardHoverEffectDemo } from "./ProjectsCard";
+import { ProjectsCard } from "./ProjectsCard";
 import Skills from "./Skills";
 import { useContext } from "react";
 import { ContextData2 } from "../Root/Root";
@@ -24,11 +24,11 @@ const Home = () => {
         </span>
         <span className="text-gray-200 text-md md:text-lg">Scroll Down</span>
       </button>
-      <div className="max-w-6xl mx-auto mt-28 md:mt-36 p-5 ">
+      <div className="max-w-6xl mx-auto p-8 md:p-12 lg:p-16">
         <MiddleHome></MiddleHome>
-        <CardHoverEffectDemo></CardHoverEffectDemo>
-        <div className="mt-28 md:mt-36">
-          <h1 className="text-3xl lg:text-5xl text-center mt-12 mb-12" data-aos="fade-right">
+        <ProjectsCard></ProjectsCard>
+        <div className="mb-28">
+          <h1 className="text-4xl text-center mb-14" data-aos="fade-right">
             My Skills
           </h1>
           <Skills></Skills>

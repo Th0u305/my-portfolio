@@ -4,15 +4,17 @@ import { NavbarDemo } from "../Navbar/Navbar";
 import { createContext, useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 export const ContextData2 = createContext();
+import "./loader.css";
+
 
 const Root = () => {
   const [bgColor, setBgColor] = useState("#e6e4e4");
   const { scrollYProgress } = useScroll();
-  const myRef = useRef(null)
+  const [loading, setLoading] = useState(true);
+  const myRef = useRef(null);
   const data = {
-    myRef
-  }
-
+    myRef,
+  };
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -34,18 +36,33 @@ const Root = () => {
     }
   });
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+
+
   return (
     <div
-      style={{
-        backgroundColor: bgColor,
-        transition: "background-color .5s ease-in-out",
-      }}
+      className="bg-white smooth-wrapper"
+      // style={{
+      //   backgroundColor: bgColor,
+      //   transition: "background-color .5s ease-in-out",
+      // }}
     >
-      <ContextData2.Provider value={data}>
-        <NavbarDemo></NavbarDemo>
-        <Outlet></Outlet>
-        <Footer></Footer>
-      </ContextData2.Provider>
+      {loading ? (
+        <div className="h-screen bg-black flex justify-center items-center">
+          <div className="loader">
+            <div className="light"></div>
+            <div className="black_overlay"></div>
+          </div>
+        </div>
+      ) : (
+        <ContextData2.Provider value={data}>
+          <NavbarDemo></NavbarDemo>
+          <Outlet></Outlet>
+          <Footer></Footer>
+        </ContextData2.Provider>
+      )}
     </div>
   );
 };

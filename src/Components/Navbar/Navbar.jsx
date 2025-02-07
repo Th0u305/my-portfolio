@@ -34,6 +34,7 @@ function Navbar() {
         </NavLink>
         <NavLink
           onClick={handleClick}
+          to="/"
           className="text-md font-medium text-white hover:text-gray-400 focus:text-cyan-300"
         >
           About

@@ -6,7 +6,7 @@ import { Link } from "react-router";
 import pic from "./img/pic1.jpg";
 
 export function FlipWordsDemo() {
-  const words = ["Olá", "Hola", "السلام عليكم", "Hello", "こんにちは", "Ciao"];
+  const words = ["Olá", "Hola", "Здравейте", "Hello", "こんにちは", "Ciao", "안녕하세요"];
   AOS.init({
     duration: 900, // values from 0 to 3000, with step 50ms
     easing: "ease-in-out", // default easing for AOS animations
@@ -23,14 +23,14 @@ export function FlipWordsDemo() {
       /> */}
 
       <div
-        className="text-3xl md:text-4xl inline-flex"
+        className="text-3xl inline-flex"
         data-aos="fade-down"
         data-aos-delay="500"
       >
         <FlipWords words={words} />, I'm Ahnaf
       </div>
       <div
-        className="flex justify-start items-center gap-2"
+        className="flex justify-start items-center gap-2" 
         data-aos="fade-right"
         data-aos-delay="500"
       >

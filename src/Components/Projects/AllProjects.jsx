@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, Image, Spinner } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Image } from "@heroui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";

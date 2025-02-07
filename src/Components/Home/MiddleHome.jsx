@@ -4,27 +4,32 @@ import "aos/dist/aos.css"; // You can also use <link> for styles
 import { FlipWordsDemo } from "./Flipword";
 import { FaDownload } from "react-icons/fa";
 import { ContextData2 } from "../Root/Root";
-
+import { useState } from "react";
 
 const MiddleHome = () => {
-  AOS.init({
-    duration: 900, // values from 0 to 3000, with step 50ms
-    easing: "ease-in-out", // default easing for AOS animations
-  });
+  useState(() => {
+    AOS.init({
+      easing: "ease-in-out", // default easing for AOS animations
+    });
+  }, []);
 
-  const {myRef} = useContext(ContextData2)
+  const { myRef } = useContext(ContextData2);
 
   return (
-    <div className="flex flex-col justify-evenly items-center" id="about" ref={myRef}>
-      <div className="w-full mb-28 md:mb-36" data-aos="fade-down">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl">
+    <div
+      className="flex flex-col justify-evenly items-center mt-28"
+      id="about"
+      ref={myRef}
+    >
+      <div className="w-full" data-aos="fade-down">
+        <h1 className="text-4xl">
           I take a user-first approach to design, making sure every solution is
           customized to meet the distinct needs of the audience.
         </h1>
       </div>
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full mb-28 md:mb-36"></hr>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-8 md:space-y-16">
+      <hr className="h-px my-8 border-0 bg-gray-700 w-full mt-28 mb-28"></hr>
+      <div className="grid md:grid-cols-2 gap-8 md:gap-0">
+        <div className="space-y-8">
           <FlipWordsDemo></FlipWordsDemo>
           <button
             className="relative h-[3rem] w-[10rem] inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
@@ -37,14 +42,21 @@ const MiddleHome = () => {
             </span>
           </button>
         </div>
-        <div className="mt-28 md:mt-0">
-          <h1 className="text-lg md:text-2xl"  data-aos="fade-up">
+        <div>
+          <h1
+            className="text-lg md:text-2xl"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             As a junior web developer, I focus on delivering high-quality code
             and polished user experiences.I enjoy turning complex ideas into
             simple, elegant solutions that work seamlessly across devices.
           </h1>
-          <h1 className="text-lg md:text-2xl mt-3"  data-aos="fade-up"
-            data-aos-delay="300">
+          <h1
+            className="text-lg md:text-2xl mt-3"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
             My experience with React, Tailwind CSS , MongoDB and Express.js
             challenges in both front-end and back-end development. My goal is to
             build seamless, user-friendly applications while constantly learning

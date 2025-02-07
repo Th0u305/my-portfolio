@@ -1,110 +1,133 @@
+import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+import { encode } from "qss";
+import React from "react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
 import { cn } from "../../lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { Link, NavLink } from "react-router";
-import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import { Link } from "react-router";
+import { Image } from "@heroui/react";
 
-export const HoverEffect = ({ items, className }) => {
-  let [hoveredIndex, setHoveredIndex] = useState(null);
+export const LinkPreview = ({
+  children,
+  url,
+  className,
+  width = 200,
+  height = 125,
+  quality = 50,
+  layout = "fixed",
+  isStatic = false,
+  imageSrc = ""
+}) => {
+  let src;
+  if (!isStatic) {
+    const params = encode({
+      url,
+      screenshot: true,
+      meta: false,
+      embed: "screenshot.url",
+      colorScheme: "dark",
+      "viewport.isMobile": true,
+      "viewport.deviceScaleFactor": 1,
+      "viewport.width": width * 3,
+      "viewport.height": height * 3,
+    });
+    src = `https://api.microlink.io/?${params}`;
+  } else {
+    src = imageSrc;
+  }
 
-  AOS.init({
-    easing: "ease-in-out", // default easing for AOS animations
-  });
+  const [isOpen, setOpen] = React.useState(false);
 
-  return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 mt-28 md:mt-36",
-        className
-      )}
-    >
-      <h1 className="text-center text-3xl md:text-4xl lg:text-5xl col-span-full mb-12" data-aos="fade-up">
-        Projects
-      </h1>
-      {items.map((item, idx) => (
-        <NavLink
-          to={item.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-          data-aos={item.data}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full  bg-cyan-300/[0.8] block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <Card>
-            <CardTitle>
-              <img src={item.image} className="rounded-2xl" alt="" />
-            </CardTitle>
-            <CardTitle>
-              <h1 className="text-center">{item.title}</h1>
-            </CardTitle>
-            {/* <CardDescription>{item.description}</CardDescription> */}
-          </Card>
-        </NavLink>
-      ))}
-      <div className="col-span-full flex items-center mt-12">
-        <NavLink
-          to="projects"
-          data-aos="fade-down"
-          className="relative mx-auto h-[3rem] w-[10rem] inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
-        >
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#34e5eb_0%,#ffff_50%,#81d3e3_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-            View All Projects
-          </span>
-        </NavLink>
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const springConfig = { stiffness: 100, damping: 15 };
+  const x = useMotionValue(0);
+
+  const translateX = useSpring(x, springConfig);
+
+  const handleMouseMove = (event) => {
+    const targetRect = event.target.getBoundingClientRect();
+    const eventOffsetX = event.clientX - targetRect.left;
+    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
+    x.set(offsetFromCenter);
+  };
+
+  return (<>
+    {isMounted ? (
+      <div className="hidden">
+        <Image
+          src={src}
+          width={width}
+          height={height}
+          quality={quality}
+          layout={layout}
+          priority={true}
+          alt="hidden image" />
       </div>
-    </div>
-  );
-};
+    ) : null}
+    <HoverCardPrimitive.Root
+      openDelay={50}
+      closeDelay={100}
+      onOpenChange={(open) => {
+        setOpen(open);
+      }}>
+      <HoverCardPrimitive.Trigger
+        onMouseMove={handleMouseMove}
+        className={cn("bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500", className)}
+        href={url}>
+        {children}
+      </HoverCardPrimitive.Trigger>
 
-export const Card = ({ className, children }) => {
-  return (
-    <div
-      className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
-        className
-      )}
-    >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
-      </div>
-    </div>
-  );
-};
-export const CardTitle = ({ className, children }) => {
-  return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
-      {children}
-    </h4>
-  );
-};
-export const CardDescription = ({ className, children }) => {
-  return (
-    <p
-      className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
-        className
-      )}
-    >
-      {children}
-    </p>
-  );
+      <HoverCardPrimitive.Content
+        className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
+        side="top"
+        align="center"
+        sideOffset={10}>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.6 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                },
+              }}
+              exit={{ opacity: 0, y: 20, scale: 0.6 }}
+              className="shadow-xl rounded-xl"
+              style={{
+                x: translateX,
+              }}>
+              <Link
+                href={url}
+                className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+                style={{ fontSize: 0 }}>
+                <Image
+                  src={isStatic ? imageSrc : src}
+                  width={width}
+                  height={height}
+                  quality={quality}
+                  layout={layout}
+                  priority={true}
+                  className="rounded-lg"
+                  alt="preview image" />
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </HoverCardPrimitive.Content>
+    </HoverCardPrimitive.Root>
+  </>);
 };

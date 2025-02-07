@@ -1,11 +1,14 @@
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Image } from "@heroui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useState } from "react";
 
 export default function Skills() {
-  AOS.init({
-    easing: "ease-in-out", // default easing for AOS animations
-  });
+  useState(() => {
+    AOS.init({
+      easing: "ease-in-out", // default easing for AOS animations
+    });
+  }, []);
   const list = [
     {
       title: "Html",
@@ -50,13 +53,13 @@ export default function Skills() {
   ];
 
   return (
-    <div
-      className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-5 w-fit mx-auto mb-28 md:mb-36"
+    (<div
+      className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-5 w-fit mx-auto"
       data-aos="fade-up"
     >
       {list.map((item, index) => (
         /* eslint-disable no-console */
-        <Card
+        (<Card
           key={index}
           isPressable
           shadow="sm"
@@ -66,8 +69,8 @@ export default function Skills() {
           <CardBody className="overflow-visible">
             <Image alt={item.title} className="w-20" src={item.img} />
           </CardBody>
-        </Card>
+        </Card>)
       ))}
-    </div>
+    </div>)
   );
 }

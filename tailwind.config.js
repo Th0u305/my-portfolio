@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const {nextui} = require("@nextui-org/react");
+const {heroui} = require("@heroui/react");
 
 export default {
   content: [
@@ -7,11 +7,11 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
      "./src/**/*.{js,ts,jsx,tsx,mdx}",
-     "./node_modules/@nextui-org/theme/dist/components/card.js",
+     "./node_modules/@heroui/theme/dist/components/card.js",
   ],
 
   theme: {
     extend: {},
   },
-  plugins: [nextui()],
+  plugins: [heroui()],
 }
