@@ -12,7 +12,7 @@ export default function AllProjects() {
   const { service, setService } = useContext(ContextData);
   const [loading, setLoading] = useState(true);
   const [msg, setMsg] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const buttonData = [
     { name: "css" },
@@ -82,19 +82,34 @@ export default function AllProjects() {
               </CardBody>
               <CardBody className="flex flex-col justify-between items-start gap-3 h-full">
                 <h1 className="text-2xl">{item.title}</h1>
-                <p className="w-fit text-start text-gray-800">{item.description}</p>
+                <p className="w-fit text-start text-gray-800">
+                  {item.description}
+                </p>
                 <div className="flex flex-wrap justify-start items-start gap-1">
                   {item?.technology?.map((tech, index) => (
-                    <div key={index}  className="px-3 py-1 border border-cyan-600 text-black rounded-full text-sm font-semibold">
+                    <div
+                      key={index}
+                      className="px-3 py-1 border border-cyan-600 text-black rounded-full text-sm font-semibold"
+                    >
                       {tech}
                     </div>
                   ))}
                 </div>
                 <div className="flex justify-start gap-2 w-full">
-                  <Link to={item.git}  className="inline-flex justify-center items-center gap-2 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 bg-gray-700 text-white text-sm w-[8rem] h-[2.5rem]" >
+                  <Link
+                    to={item.git}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex justify-center items-center gap-2 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 bg-gray-700 text-white text-sm w-[8rem] h-[2.5rem]"
+                  >
                     <FaGithub className="text-lg" /> Git Hub
                   </Link>
-                  <Link to={item.link}  className="inline-flex justify-center items-center gap-2 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 bg-gray-700 text-white text-sm w-[8rem] h-[2.5rem]">
+                  <Link
+                    to={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex justify-center items-center gap-2 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 bg-gray-700 text-white text-sm w-[8rem] h-[2.5rem]"
+                  >
                     <TfiWorld className="text-lg" />
                     Live Link
                   </Link>

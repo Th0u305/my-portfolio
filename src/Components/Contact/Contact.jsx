@@ -24,7 +24,7 @@ const Contact = () => {
   };
   return (
     <BackgroundBeamsWithCollision>
-      <section className="bg-[#bdbdbd] mt-48 mb-16 z-30 rounded-2xl w-11/12 p-5 md:w-1/2 xl:p-16">
+      <section className="bg-white mt-48 mb-16 z-30 rounded-2xl w-11/12 p-5 md:w-1/2 xl:p-16">
         <div className="py-8 lg:py-16 px-4 mx-auto">
           <h2 className="text-gray-800 mb-4 text-3xl lg:text-5xl tracking-tight font-semibold text-center">
             Get in Touch

@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { Menu } from "../ui/NavUtils";
 import { cn } from "../../lib/utils";
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
 import { ContextData } from "../Context/ContextProvider";
 
 export function NavbarDemo() {

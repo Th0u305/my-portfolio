@@ -42,21 +42,33 @@ export function FlipWordsDemo() {
         data-aos="fade-right"
         data-aos-delay="500"
       >
-        <Link to="https://github.com/Th0u305">
+        <Link
+          to="https://github.com/Th0u305"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             className="w-16"
             src="https://i.ibb.co.com/LZF0cRj/github.png"
             alt=""
           />
         </Link>
-        <Link>
+        <Link
+          to="https://www.linkedin.com/in/ahnaf-uzzaman-2282a920b"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             className="w-12"
             src="https://i.ibb.co.com/WHkvx8x/linkedin.png"
             alt=""
           />
         </Link>
-        <Link>
+        <Link
+          to="https://www.facebook.com/md.nafi.167"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             className="w-11"
             src="https://i.ibb.co.com/jGydLpN/facebook.png"
