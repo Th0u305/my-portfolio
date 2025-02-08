@@ -63,7 +63,6 @@ export default function Skills() {
           key={index}
           isPressable
           shadow="sm"
-          onPress={() => console.log("item pressed")}
           data-aos={item.data}
         >
           <CardBody className="overflow-visible">

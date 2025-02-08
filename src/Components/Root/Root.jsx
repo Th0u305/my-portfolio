@@ -1,20 +1,16 @@
 import { Outlet } from "react-router";
 import Footer from "../Footer/Footer";
 import { NavbarDemo } from "../Navbar/Navbar";
-import { createContext, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-export const ContextData2 = createContext();
 import "./loader.css";
-
+import ContextProvider from "../Context/ContextProvider";
 
 const Root = () => {
   const [bgColor, setBgColor] = useState("#e6e4e4");
   const { scrollYProgress } = useScroll();
   const [loading, setLoading] = useState(true);
-  const myRef = useRef(null);
-  const data = {
-    myRef,
-  };
+
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -40,7 +36,6 @@ const Root = () => {
     setLoading(false);
   }, 2000);
 
-
   return (
     <div
       className="bg-white smooth-wrapper"
@@ -57,11 +52,11 @@ const Root = () => {
           </div>
         </div>
       ) : (
-        <ContextData2.Provider value={data}>
+        <ContextProvider>
           <NavbarDemo></NavbarDemo>
           <Outlet></Outlet>
           <Footer></Footer>
-        </ContextData2.Provider>
+        </ContextProvider>
       )}
     </div>
   );

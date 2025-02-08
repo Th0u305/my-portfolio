@@ -2,7 +2,7 @@ import React from "react";
 import "./button.css";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
-import { BackgroundBeamsWithCollision } from "../Utility/Bg-ani";
+import { BackgroundBeamsWithCollision } from "../ui/Bg-ani";
 
 const Contact = () => {
   //   const {myRef} = useContext(AuthContext)

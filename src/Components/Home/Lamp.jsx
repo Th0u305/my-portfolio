@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { LampContainer } from "../Utility/LampUtils";
+import { LampContainer } from "../ui/LampUtils";
 export function LampDemo() {
   return (
     <div className="relative">

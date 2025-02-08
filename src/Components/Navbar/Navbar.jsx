@@ -1,9 +1,9 @@
 "use client";
-import { useContext, useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../Utility/NavUtils";
+import { useContext } from "react";
+import { Menu } from "../ui/NavUtils";
 import { cn } from "../../lib/utils";
-import { Link, NavLink } from "react-router";
-import { ContextData2 } from "../Root/Root";
+import { NavLink } from "react-router";
+import { ContextData } from "../Context/ContextProvider";
 
 export function NavbarDemo() {
   return (
@@ -13,7 +13,7 @@ export function NavbarDemo() {
   );
 }
 function Navbar() {
-  const { myRef } = useContext(ContextData2);
+  const { myRef } = useContext(ContextData);
 
   const handleClick = () => {
     myRef.current?.scrollIntoView({ behavior: "smooth" });

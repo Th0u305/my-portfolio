@@ -4,15 +4,15 @@ import MiddleHome from "./MiddleHome";
 import { ProjectsCard } from "./ProjectsCard";
 import Skills from "./Skills";
 import { useContext } from "react";
-import { ContextData2 } from "../Root/Root";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ContextData } from "../Context/ContextProvider";
 
 const Home = () => {
   AOS.init({
     easing: "ease-in-out", // default easing for AOS animations
   });
-  const { myRef } = useContext(ContextData2);
+  const { myRef } = useContext(ContextData);
   return (
     <div>
       <div className="relative" id="home" ref={myRef}>

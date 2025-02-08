@@ -3,8 +3,8 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { FlipWordsDemo } from "./Flipword";
 import { FaDownload } from "react-icons/fa";
-import { ContextData2 } from "../Root/Root";
 import { useState } from "react";
+import { ContextData } from "../Context/ContextProvider";
 
 const MiddleHome = () => {
   useState(() => {
@@ -13,7 +13,7 @@ const MiddleHome = () => {
     });
   }, []);
 
-  const { myRef } = useContext(ContextData2);
+  const { myRef } = useContext(ContextData);
 
   return (
     <div

@@ -1,12 +1,20 @@
 import React from "react";
-import { FlipWords } from "../Utility/Flip-words";
+import { FlipWords } from "../ui/Flip-words";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router";
 import pic from "./img/pic1.jpg";
 
 export function FlipWordsDemo() {
-  const words = ["Olá", "Hola", "Здравейте", "Hello", "こんにちは", "Ciao", "안녕하세요"];
+  const words = [
+    "Olá",
+    "Hola",
+    "Здравейте",
+    "Hello",
+    "こんにちは",
+    "Ciao",
+    "안녕하세요",
+  ];
   AOS.init({
     duration: 900, // values from 0 to 3000, with step 50ms
     easing: "ease-in-out", // default easing for AOS animations
@@ -30,7 +38,7 @@ export function FlipWordsDemo() {
         <FlipWords words={words} />, I'm Ahnaf
       </div>
       <div
-        className="flex justify-start items-center gap-2" 
+        className="flex justify-start items-center gap-2"
         data-aos="fade-right"
         data-aos-delay="500"
       >

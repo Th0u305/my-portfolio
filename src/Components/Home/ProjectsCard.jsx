@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkPreview } from "../Utility/Card-hover-effect";
+import { LinkPreview } from "../ui/Card-hover-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useState } from "react";
@@ -67,7 +67,9 @@ export function ProjectsCard() {
 
   return (
     <div className="mt-28 mb-28">
-      <h1 className="text-4xl text-center lg:mb-14"  data-aos="fade-up">Projects</h1>
+      <h1 className="text-4xl text-center lg:mb-14" data-aos="fade-up" data-aos-delay="300">
+        Projects
+      </h1>
       <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:gap-5 lg:grid-cols-1">
         {projects.map((item, index) => (
           <div
