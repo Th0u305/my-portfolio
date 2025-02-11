@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Menu } from "../ui/NavUtils";
 import { cn } from "../../lib/utils";
 import { NavLink, useLocation } from "react-router";
@@ -13,6 +13,31 @@ export function NavbarDemo() {
   );
 }
 function Navbar() {
+  const { pathname } = useLocation();
+  const [textColor, setTextColor] = useState("");
+  const [textColor2, setTextColor2] = useState("");
+  const [textColor3, setTextColor3] = useState("");
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setTextColor("text-cyan-300");
+    }
+    else{
+      setTextColor("text-white")
+    }
+    if (pathname === "/projects") {
+      setTextColor2("text-cyan-300");
+    }
+    else{
+      setTextColor2("text-white")
+    }
+    if (pathname === "/contact") {
+      setTextColor3("text-cyan-300");
+    }
+    else{
+      setTextColor3("text-white")
+    }
+  }, [pathname]);
   const { myRef } = useContext(ContextData);
 
   const handleClick = () => {
@@ -28,26 +53,26 @@ function Navbar() {
       <Menu>
         <NavLink
           to="/"
-          className="text-md font-medium text-white hover:text-gray-400 focus:text-cyan-300"
+          className={`text-md sm:text-lg font-medium ${textColor}`}
         >
           Home
         </NavLink>
         <NavLink
           onClick={handleClick}
           to="/"
-          className="text-md font-medium text-white hover:text-gray-400 focus:text-cyan-300"
+          className="text-md sm:text-lg font-medium text-white"
         >
           About
         </NavLink>
         <NavLink
           to="/projects"
-          className="text-md font-medium text-white hover:text-gray-400 focus:text-cyan-300"
+          className={`text-md sm:text-lg font-medium ${textColor2}`}
         >
           Projects
         </NavLink>
         <NavLink
           to="/contact"
-          className="text-md font-medium text-white hover:text-gray-400 focus:text-cyan-300"
+          className={`text-md sm:text-lg font-medium ${textColor3}`}
         >
           Contact
         </NavLink>

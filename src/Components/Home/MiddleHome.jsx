@@ -44,7 +44,7 @@ const MiddleHome = () => {
         </div>
         <div>
           <h1
-            className="text-lg md:text-2xl"
+            className="text-xl md:text-2xl"
             data-aos="fade-up"
             data-aos-delay="500"
           >
@@ -53,7 +53,7 @@ const MiddleHome = () => {
             simple, elegant solutions that work seamlessly across devices.
           </h1>
           <h1
-            className="text-lg md:text-2xl mt-3"
+            className="text-xl md:text-2xl mt-3"
             data-aos="fade-up"
             data-aos-delay="500"
           >

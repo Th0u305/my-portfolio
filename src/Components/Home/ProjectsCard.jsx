@@ -13,9 +13,9 @@ export function ProjectsCard() {
   const projects = [
     {
       id: 1,
-      image: "https://i.ibb.co.com/GtSx8kB/flower-Shop.jpg",
+      image: "https://i.ibb.co.com/xqGDRgbv/topic-Tree.jpg",
       title: "TopicTree",
-      description: "Buy your favorite flower with great discount",
+      description: "Introducing TopicTree, a simple discussion platform",
       link: "https://forum-website-pi.vercel.app/",
       data: "fade-right",
     },

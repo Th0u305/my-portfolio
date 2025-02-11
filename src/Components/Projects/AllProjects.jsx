@@ -52,7 +52,7 @@ export default function AllProjects() {
 
   return (
     <div>
-      <div className="grid grid-cols-4 grid-rows-1 mb-12 mt-12 xl:w-1/2 mx-auto">
+      <div className="grid grid-cols-2 grid-rows-1 mb-12 mt-12 gap-5 xl:w-1/2 mx-auto">
         {buttonData.map((item, index) => (
           <button
             onClick={() => handleData(item.name)}
