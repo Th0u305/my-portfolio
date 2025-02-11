@@ -3,7 +3,6 @@ import { FlipWords } from "../ui/Flip-words";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router";
-import pic from "./img/pic1.jpg";
 
 export function FlipWordsDemo() {
   const words = [
