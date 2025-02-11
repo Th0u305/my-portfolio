@@ -56,6 +56,7 @@ export default function Skills() {
     (<div
       className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-5 w-fit mx-auto"
       data-aos="fade-up"
+      data-aos-delay="400"
     >
       {list.map((item, index) => (
         /* eslint-disable no-console */

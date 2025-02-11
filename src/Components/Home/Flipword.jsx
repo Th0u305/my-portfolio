@@ -33,14 +33,14 @@ export function FlipWordsDemo() {
       <div
         className="text-3xl inline-flex"
         data-aos="fade-down"
-        data-aos-delay="500"
+        data-aos-delay="300"
       >
         <FlipWords words={words} />, I'm Ahnaf
       </div>
       <div
         className="flex justify-start items-center gap-2"
         data-aos="fade-right"
-        data-aos-delay="500"
+        data-aos-delay="300"
       >
         <Link
           to="https://github.com/Th0u305"

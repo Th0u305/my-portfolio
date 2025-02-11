@@ -64,7 +64,7 @@ export function ProjectsCard() {
   ];
 
   return (
-    <div className="mt-28 mb-28">
+    <div className="mb-56 mt-56 md:mt-60 md:mb-60 2xl:mt-72 2xl:mb-72">
       <h1
         className="text-4xl text-center lg:mb-14"
         data-aos="fade-up"
@@ -78,7 +78,7 @@ export function ProjectsCard() {
             className="text-xl md:text-3xl mb-10 space-y-12"
             key={index}
             data-aos="fade-up"
-            data-aos-delay="300"
+            data-aos-delay="400"
           >
             <div className="justify-between items-center hidden xl:flex">
               <LinkPreview url={item?.link} imageSrc={item?.image}>
