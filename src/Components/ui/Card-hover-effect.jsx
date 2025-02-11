@@ -15,9 +15,9 @@ export const LinkPreview = ({
   children,
   url,
   className,
-  width = 200,
-  height = 125,
-  quality = 50,
+  width = 300,
+  height = 200,
+  quality = 100,
   layout = "fixed",
   isStatic = false,
   imageSrc = ""
@@ -81,7 +81,7 @@ export const LinkPreview = ({
       }}>
       <HoverCardPrimitive.Trigger
         onMouseMove={handleMouseMove}
-        className={cn("bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500", className)}
+        className={cn("bg-clip-text text-transparent bg-gradient-to-br text-black", className)}
         href={url}>
         {children}
       </HoverCardPrimitive.Trigger>

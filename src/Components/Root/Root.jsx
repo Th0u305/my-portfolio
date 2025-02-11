@@ -5,12 +5,12 @@ import { useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import "./loader.css";
 import ContextProvider from "../Context/ContextProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Root = () => {
   const [bgColor, setBgColor] = useState("#e6e4e4");
   const { scrollYProgress } = useScroll();
   const [loading, setLoading] = useState(true);
-
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -39,10 +39,10 @@ const Root = () => {
   return (
     <div
       className="bg-white smooth-wrapper"
-      // style={{
-      //   backgroundColor: bgColor,
-      //   transition: "background-color .5s ease-in-out",
-      // }}
+      style={{
+        backgroundColor: bgColor,
+        transition: "background-color .5s ease-in-out",
+      }}
     >
       {loading ? (
         <div className="h-screen bg-black flex justify-center items-center">
@@ -53,6 +53,7 @@ const Root = () => {
         </div>
       ) : (
         <ContextProvider>
+          <ToastContainer />
           <NavbarDemo></NavbarDemo>
           <Outlet></Outlet>
           <Footer></Footer>

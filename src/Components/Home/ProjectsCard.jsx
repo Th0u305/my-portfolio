@@ -29,7 +29,7 @@ export function ProjectsCard() {
       data: "fade-down",
     },
     {
-      id: 1,
+      id: 3,
       image: "https://i.ibb.co.com/8XY8wwn/service.jpg",
       title: "TrustWise",
       description: "A Service company that provides various services",
@@ -41,7 +41,7 @@ export function ProjectsCard() {
       image: "https://i.ibb.co.com/6g4JCFj/influencer-Gear.jpg",
       title: "Influencer Gears",
       description:
-        "Are you an influencer? . View our website to see if you have the necessary gears",
+        "Are you an influencer? View our website to see if you have the necessary gears",
       link: "https://th0u305.github.io/influencer-gears/",
       data: "fade-up",
     },
@@ -49,28 +49,30 @@ export function ProjectsCard() {
       id: 5,
       image: "https://i.ibb.co.com/BgjkPbv/pet.jpg",
       title: "Furry-Friends",
-      description:
-        "Welcome to Paws Kingdom, your trusted destination for finding the perfect pet! We specialize in offering a variety of healthy, well-cared-for pets, including dogs, cats, birds, reptiles, fish, and small animals. ",
+      description: "Welcome to Paws Kingdom ",
       link: "https://paws-kingdom.vercel.app/",
       data: "fade-right",
     },
     {
       id: 6,
-      image: "https://i.ibb.co.com/ZKXngNm/penguin-Fashion-Back.jpg",
-      title: "PenguinFashion",
-      description:
-        "In need of backpack visit our shop to buy premium quality backpacks",
-      link: "https://th0u305.github.io/shopping-landing-pages/Option-3-Backpack-Moon/",
+      image: "https://i.ibb.co.com/cSQVKg5j/portfolio2.jpg",
+      title: "Portfolio",
+      description: "My portfolio website",
+      link: "https://my-portfolio-nine-taupe-31.vercel.app/",
       data: "fade-down",
     },
   ];
 
   return (
     <div className="mt-28 mb-28">
-      <h1 className="text-4xl text-center lg:mb-14" data-aos="fade-up" data-aos-delay="300">
+      <h1
+        className="text-4xl text-center lg:mb-14"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
         Projects
       </h1>
-      <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:gap-5 lg:grid-cols-1">
+      <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:gap-5 xl:grid-cols-1">
         {projects.map((item, index) => (
           <div
             className="text-xl md:text-3xl mb-10 space-y-12"
@@ -78,11 +80,8 @@ export function ProjectsCard() {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <div className="justify-between items-center hidden lg:flex">
-              <LinkPreview
-                url={item?.link}
-                className="flex flex-row justify-between w-fit"
-              >
+            <div className="justify-between items-center hidden xl:flex">
+              <LinkPreview url={item?.link} imageSrc={item?.image}>
                 <div className="flex flex-row gap-3">
                   <p className="text-gray-400 text-4 text-2xl h-16">
                     0{item?.id}
@@ -93,16 +92,17 @@ export function ProjectsCard() {
               <LinkPreview
                 className="text-gray-800 text-xl break-words break-all max-w-xl text-ellipsis"
                 url={item?.link}
+                imageSrc={item?.image}
               >
                 {item?.description}
               </LinkPreview>
             </div>
 
-            <div className="lg:hidden text-center md:text-start">
+            <div className="xl:hidden text-center">
               <div className="flex flex-col gap-5">
                 <img
                   src={item?.image}
-                  className="rounded-3xl mx-auto border-2"
+                  className="rounded-3xl mx-auto border-2 w-96"
                   alt=""
                 />
                 <a
