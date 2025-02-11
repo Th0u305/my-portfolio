@@ -52,12 +52,12 @@ export default function AllProjects() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 grid-rows-1 mb-12 mt-12 gap-5 xl:w-1/2 mx-auto">
+      <div className="grid grid-cols-2 grid-rows-1 sm:grid-cols-4 mb-12 mt-12 gap-5 sm:gap-0 xl:w-1/2 mx-auto">
         {buttonData.map((item, index) => (
           <button
             onClick={() => handleData(item.name)}
-            key={index}
-            className="uppercase relative mx-auto h-[3rem] w-[10rem] inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+            key={index} 
+            className="uppercase relative mx-auto h-[3rem] w-[8rem] md:w-[10rem] inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#34e5eb_0%,#ffff_50%,#81d3e3_100%)]" />
             <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
