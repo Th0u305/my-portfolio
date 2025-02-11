@@ -17,7 +17,7 @@ export function FlipWordsDemo() {
   AOS.init({
     duration: 900, // values from 0 to 3000, with step 50ms
     easing: "ease-in-out", // default easing for AOS animations
-  });
+  }); 
 
   return (
     <div className="space-y-5">
