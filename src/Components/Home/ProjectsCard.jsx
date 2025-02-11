@@ -102,7 +102,7 @@ export function ProjectsCard() {
               <div className="flex flex-col gap-5">
                 <img
                   src={item?.image}
-                  className="rounded-3xl mx-auto border-2 w-96"
+                  className="rounded-3xl mx-auto border-2 w-80"
                   alt=""
                 />
                 <a
