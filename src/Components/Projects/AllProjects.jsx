@@ -44,7 +44,7 @@ export default function AllProjects() {
         console.error("Error fetching data:", error);
       });
 
-    if (data === "nextjS" || data === "redux") {
+    if (data === "redux") {
       setLoading(false);
       setMsg("Work on progress");
     }
