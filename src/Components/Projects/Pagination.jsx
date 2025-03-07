@@ -7,7 +7,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { ContextData } from "../Context/ContextProvider";
 import { useEffect } from "react";
 
-const Pagination = () => {
+const Pagination = ({setMsg}) => {
   const { currentPage, setCurrentPage, setService } = useContext(ContextData);
 
   const totalPages = 6;
@@ -16,8 +16,10 @@ const Pagination = () => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/allProjects?page=${currentPage}`)
       .then((response) => {
-        // setService(response.data.sort(() => Math.random() - 0.5).slice(0, 6));
         setService(response.data)
+        if (response.data.length === 0) {
+          setMsg("No data available")
+        }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
